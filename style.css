@@ -1,0 +1,301 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: 黑体, sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clear-fix:before,
+.clear-fix:after{
+    content: "";
+    display: table;
+}
+.clear-fix:after{
+    clear: both;
+}
+body{
+    background-color: #EEEDED;
+}
+.wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+.title{
+    background-color: #F4F5F6;
+    height: 40px;
+    line-height: 40px;
+    color: #555555;
+    text-indent: 5px;
+}
+.block{
+    background-color: white;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+
+/*头部*/
+header{
+    width: 100%;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    font-size: 40px;
+    color: orangered;
+    background-color: #aaaaaa;
+}
+/*贝塞尔*/
+#bezier{
+    width: 500px;
+}
+#bezierWrap{
+    position: absolute;
+    background-color: #eeeeee;
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(.5, rgba(255, 255, 255, .9)), color-stop(.5, transparent), to(transparent));
+    background-image: -moz-linear-gradient(0deg, #ffffff 50%, transparent 50%, transparent);
+    background-image: -o-linear-gradient(0deg, #ffffff 50%, transparent 50%, transparent);
+    background-image: linear-gradient(0deg, #ffffff 50%, transparent 50%, transparent);
+    background-size: 40px 40px;
+}
+#bezier .image{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin-left: 20px;
+}
+.x-axis, .y-axis, .x-top, .y-right{
+    z-index: 3;
+    position: absolute;
+    bottom: 50px;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+.y-axis{
+    transform: rotate(-90deg);
+    transform-origin: left center;
+}
+.y-right{
+    transform: rotate(90deg);
+    transform-origin: right center;
+    background-color: #cccccc;
+}
+.x-top{
+    top: 50px;
+    background-color: #cccccc;
+}
+.x-axis{
+    text-align: right;
+}
+.y-axis{
+    text-align: right;
+}
+.circle{
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.p0, .p3{
+    border: 1px solid #aaaaaa;
+    background-color: white;
+}
+.p0{
+    left: -10px;
+    bottom: 40px;
+    z-index: 4;
+}
+.p3{
+    left: 290px;
+    top: 40px;
+    z-index: 2;
+}
+.p1, .p2{
+    border: none;
+    z-index: 4;
+    outline: none;
+}
+.p1{
+    background-color: green;
+}
+.p2{
+    background-color: red;
+}
+
+/*几个输入框*/
+.input-zone input{
+    width: 40px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: #eeeeee;
+    margin-left: 10px;
+}
+.input-zone{
+    width: 180px;
+}
+.input-zone label{
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    display: inline-block;
+}
+.red label{
+    background-color: red;
+}
+.green label{
+    background-color: green;
+}
+.input-zone button{
+    display: block;
+    margin: 10px auto 0 auto;
+    border: none;
+    background-color: #249BF5;
+    width: 50px;
+    height: 25px;
+    color: white;
+    border-radius: 4px;
+    outline: none;
+}
+.input-zone button:hover{
+    background-color: #2480F5;
+}
+
+/*几个特殊值的选择，位于贝塞尔图像紧右侧*/
+
+#values a{
+    display: block;
+    width: 110px;
+    height: 30px;
+    text-align: center;
+    background-color: #aaaaaa;
+    line-height: 35px;
+    margin: 25px auto;
+    color: white;
+    font-size: 18px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px #999999;
+}
+#values a:hover{
+    background-color: #999999;
+    font-size: 20px;
+}
+
+/*贝塞尔运动演示*/
+#move{
+    width: 480px;
+    padding-bottom: 10px;
+}
+.duration{
+    padding: 10px 0;
+}
+.duration h3{
+    text-indent: 10px;
+}
+.duration figure{
+    display: inline-block;
+    width: 40px;
+    padding-right: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: green;
+}
+.slide{
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 8px;
+    background-color: #999999;
+    border-radius: 4px;
+    box-shadow: -1px -1px 2px #333333;
+}
+#slideBar{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: gold;
+    top: -7px;
+    left: 290px;
+    cursor: pointer;
+}
+#move .item{
+    display: inline-block;
+}
+#startMove{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #4e801d;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    cursor: pointer;
+    margin-left: 20px;
+}
+#startMove:hover{
+    background-color: green;
+    font-size: 20px;
+}
+
+/*运动的小块*/
+.move-curve{
+    width: 60px;
+    height: 40px;
+    border-radius: 8px;
+    position: relative;
+    left: 20px;
+    background-color: #555555;
+    margin: 15px;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+}
+.linear{
+    background-color: gold;
+    left: 360px;
+}
+.bezier{
+    background-color: orangered;
+    left: 360px
+}
+
+/*代码展示区*/
+#code{
+    height: 170px;
+}
+code{
+    -webkit-user-select: text;
+    -moz-user-select:  text;
+    -ms-user-select:  text;
+    user-select:  text;
+}
+#code .content{
+    display: block;
+    margin-top: 20px;
+}
+.pre{
+    display: inline-block;
+    text-indent: 30px;
+    color: #403bff;
+}
