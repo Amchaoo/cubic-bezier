@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<div class="wrapper clear-fix">
+    <header>CUBIC-BEZIER</header>
+    <section id="bezier" class="block fl clear-fix">
+        <h2 class="title">贝塞尔曲线</h2>
+        <div class="image fl">
+            <span class="x-axis">时间</span>
+            <span class="y-axis">速度</span>
+            <span class="x-top"></span>
+            <span class="y-right"></span>
+            <span class="p0 circle"></span>
+            <span class="p3 circle"></span>
+            <button id="p1" class="p1 circle"></button>
+            <button id="p2" class="p2 circle"></button>
+            <canvas id="bezierWrap" width="300px" height="400px"></canvas>
+        </div>
+        <div class="fl">
+            <div class="input-zone">
+                <p class="green"><label for="greenDot"></label><input name="x1" type="text" id="greenDot" placeholder="x1"/><input name="y1" type="text" placeholder="y1"></p>
+                <p class="red"><label for="redDot"></label><input name="x2" type="text" id="redDot" placeholder="x2"/><input name="y2" type="text" placeholder="y2"></p>
+                <button id="ensurePosition">确认</button>
+            </div>
+            <ul id="values">
+                <li><a href="javascript:;">ease</a></li>
+                <li><a href="javascript:;">linear</a></li>
+                <li><a href="javascript:;">ease-in</a></li>
+                <li><a href="javascript:;">ease-out</a></li>
+                <li><a href="javascript:;">ease-in-out</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="fr">
+        <div id="move" class="block">
+            <h2 class="title">运动对比</h2>
+            <section class="clear-fix duration">
+                <h3 class="item fl">Duration:</h3><figure class="fl">10.0s</figure>
+                <span class="slide"><i id="slideBar"></i></span>
+            </section>
+            <section>
+                <span id="startMove">GO</span>
+                <div class="move-curve">linear</div>
+                <div class="move-curve">bezier</div>
+            </section>
+        </div>
+        <div id="code" class="block">
+            <h2 class="title">代码</h2>
+            <code class="content">
+                <span>.bezier{</span><br/>
+                <span class="pre">transition:</span><span id="transition"></span><br>
+                <span class="pre">-webkit-transition:</span><span id="-webkit-transition"></span><br>
+                <span>}</span>
+            </code>
+        </div>
+    </section>
+</div>
+<script src="bezier.js"></script>
+</body>
+</html>
